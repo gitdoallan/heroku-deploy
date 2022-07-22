@@ -11,7 +11,8 @@ function App() {
   useEffect(() => {
     fetch(API_ENDPOINT)
       .then((res) => res.json())
-      .then((parsedData) => { setData(parsedData); setLoading(false); });
+      .then((parsedData) => { setData(parsedData); setLoading(false); })
+      .catch((err) => console.log(err));
   }, []);
 
   if (loading) return <h1>loading</h1>;
